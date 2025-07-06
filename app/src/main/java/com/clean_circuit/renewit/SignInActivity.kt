@@ -63,6 +63,7 @@ val GreenColorScheme = lightColorScheme(
 )
 
 
+
 val CustomTypography = Typography(
     displayLarge = TextStyle(
         fontSize = 30.sp,
@@ -70,27 +71,27 @@ val CustomTypography = Typography(
         letterSpacing = 0.15.sp
     ),
     displayMedium = TextStyle(
-        fontSize = 24.sp,
-        fontWeight = FontWeight.Bold,
-        letterSpacing = 0.15.sp
-    ),
-    displaySmall = TextStyle(
         fontSize = 20.sp,
         fontWeight = FontWeight.Bold,
         letterSpacing = 0.15.sp
     ),
+    displaySmall = TextStyle(
+        fontSize = 12.sp,
+        fontWeight = FontWeight.Bold,
+        letterSpacing = 0.15.sp
+    ),
     bodyLarge = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 12.sp,
         fontWeight = FontWeight.Normal,
         letterSpacing = 0.5.sp
     ),
     bodyMedium = TextStyle(
-        fontSize = 14.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.Normal,
         letterSpacing = 0.25.sp
     ),
     bodySmall = TextStyle(
-        fontSize = 12.sp,
+        fontSize = 20.sp,
         fontWeight = FontWeight.Normal,
         letterSpacing = 0.4.sp
     )
@@ -171,7 +172,7 @@ fun LoginScreen() {
 
 
         if (passwordError) {
-            Text("Password must be at least 6 characters", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+            Text("Password must be at least 6 characters", color = Color.Red, style = MaterialTheme.typography.displaySmall)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -206,15 +207,15 @@ fun LoginScreen() {
             },
             colors = ButtonDefaults.buttonColors(containerColor = GreenPrimary),
             modifier = Modifier
-                .width(130.dp)
-                .height(50.dp)
+                .width(135.dp)
+                .height(58.dp)
                 .fillMaxWidth(),
             shape=RoundedCornerShape(12.dp)
 
 
 
         ) {
-            Text(text = "Sign In", color = GreenOnPrimary)
+            Text(text = "Sign In", color = GreenOnPrimary,style = MaterialTheme.typography.bodyMedium )
         }
 
         Spacer(modifier = Modifier.height(16.dp))
