@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -39,12 +40,20 @@ import androidx.compose.material3.Typography
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.shape.RoundedCornerShape
+
+
+
+
+
+
 
 
 
 val GreenPrimary = Color(0xFF00DB00)
 val GreenOnPrimary = Color(0xFFFFFFFF)
 val GreenSecondary = Color(0xFF00DB00)
+
 
 
 val GreenColorScheme = lightColorScheme(
@@ -196,7 +205,14 @@ fun LoginScreen() {
                 }
             },
             colors = ButtonDefaults.buttonColors(containerColor = GreenPrimary),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .width(130.dp)
+                .height(50.dp)
+                .fillMaxWidth(),
+            shape=RoundedCornerShape(12.dp)
+
+
+
         ) {
             Text(text = "Sign In", color = GreenOnPrimary)
         }
