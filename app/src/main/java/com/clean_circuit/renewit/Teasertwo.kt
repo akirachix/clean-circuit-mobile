@@ -19,8 +19,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.clean_circuit.renewit.R
+import androidx.compose.ui.text.font.FontFamily
 import com.clean_circuit.renewit.ui.theme.RenewitTheme
+import com.clean_circuit.renewit.ui.theme.NunitoFontFamily
 @Composable
 fun RenewItScreen() {
     Column(
@@ -74,16 +75,19 @@ fun RenewItScreen() {
             Text(
                 text = stringResource(id = R.string.renewit_text),
                 color = Color.White,
-                fontSize = 36.sp,
+                fontSize = 45.sp,
                 fontWeight = FontWeight.Bold,
+                fontFamily = NunitoFontFamily ,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
             Text(
                 text = stringResource(id = R.string.description_text),
                 color = Color.Black,
-                fontSize = 19.sp,
+                fontSize = 21.sp,
                 textAlign = TextAlign.Center,
+                fontWeight = FontWeight.SemiBold,
+                fontFamily = NunitoFontFamily,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 32.dp)
@@ -102,7 +106,10 @@ fun RenewItScreen() {
                 Text(
                     text = stringResource(id = R.string.sign_up_button_text),
                     color = Color(0xFF1E1E1E),
-                    fontSize = 22.sp
+                    fontSize = 25.sp,
+                    fontWeight = FontWeight.Normal,
+                    fontFamily = NunitoFontFamily
+
                 )
             }
         }
