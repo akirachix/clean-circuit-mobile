@@ -24,7 +24,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -66,7 +68,24 @@ fun SignUpScreen() {
 
         Spacer(modifier = Modifier.height(32.dp))
         Text(text = "Sign Up", style = MaterialTheme.typography.displayMedium)
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(1.dp))
+        Box(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                text = "Name",
+                fontWeight = FontWeight.Medium,
+                fontSize = 15.sp,
+                modifier = Modifier
+                    .padding(bottom = 8.dp)
+                    .align(Alignment.TopStart),
+                textAlign = TextAlign.Start
+            )
+        }
+
+
+
+
 
 
 
@@ -82,6 +101,20 @@ fun SignUpScreen() {
 
 
         Spacer(modifier = Modifier.height(16.dp))
+        Box(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                text = "Email",
+                fontWeight = FontWeight.Medium,
+                fontSize = 15.sp,
+                modifier = Modifier
+                    .padding(bottom = 8.dp)
+                    .align(Alignment.TopStart),
+                textAlign = TextAlign.Start
+            )
+        }
+
 
 
 
@@ -89,7 +122,7 @@ fun SignUpScreen() {
         OutlinedTextField(
             value = email.value,
             onValueChange = { email.value = it },
-            label = { Text("Email") },
+            label = { Text("email@example.com") },
             modifier = Modifier
                 .fillMaxWidth()
 //                .border(BorderStroke(2.dp, borderColor), RoundedCornerShape(5.dp))
@@ -98,13 +131,28 @@ fun SignUpScreen() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        Box(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                text = "Password",
+                fontWeight = FontWeight.Medium,
+                fontSize = 15.sp,
+                modifier = Modifier
+                    .padding(bottom = 8.dp)
+                    .align(Alignment.TopStart),
+                textAlign = TextAlign.Start
+            )
+        }
+
+
 
 
 
         OutlinedTextField(
             value = password.value,
             onValueChange = { password.value = it },
-            label = { Text("Password") },
+            label = { Text("enter password") },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier
                 .fillMaxWidth()
@@ -113,6 +161,20 @@ fun SignUpScreen() {
 
 
         Spacer(modifier = Modifier.height(16.dp))
+        Box(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                text = "Confirm Password",
+                fontWeight = FontWeight.Medium,
+                fontSize = 15.sp,
+                modifier = Modifier
+                    .padding(bottom = 8.dp)
+                    .align(Alignment.TopStart),
+                textAlign = TextAlign.Start
+            )
+        }
+
 
 
 
@@ -120,7 +182,7 @@ fun SignUpScreen() {
         OutlinedTextField(
             value = confirmPassword.value,
             onValueChange = { confirmPassword.value = it },
-            label = { Text("Confirm Password") },
+            label = { Text("re-enter password") },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier
                 .fillMaxWidth()
@@ -138,7 +200,7 @@ fun SignUpScreen() {
                 checked = isAgreedToTerms.value,
                 onCheckedChange = { isAgreedToTerms.value = it }
             )
-            Text("I agree to the terms", fontSize = 14.sp)
+            Text("I agree to the terms and conditions and privacy policy", fontSize = 14.sp)
         }
 
 
@@ -147,16 +209,22 @@ fun SignUpScreen() {
 
 
 
-        Button(
-            onClick = {},
-            colors = ButtonDefaults.buttonColors(buttonColor),
-            modifier = Modifier.fillMaxWidth()
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally  // Center children horizontally
         ) {
-            Text("Sign Up", color = Color.White)
+            Button(
+                onClick = {},
+                colors = ButtonDefaults.buttonColors(buttonColor),
+                shape = RoundedCornerShape(10.dp)  // Smaller corner radius for less curvature
+            ) {
+                Text("Sign Up", color = Color.White)
+            }
         }
 
 
-        Spacer(modifier = Modifier.height(16.dp))
+
+            Spacer(modifier = Modifier.height(16.dp))
 
 
 
