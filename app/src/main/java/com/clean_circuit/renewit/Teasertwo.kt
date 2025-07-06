@@ -44,7 +44,7 @@ fun RenewItScreen() {
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(250.dp)
+                    .height(310.dp)
             )
         }
 
@@ -65,9 +65,9 @@ fun RenewItScreen() {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Dot(isActive = true)
-                Spacer(modifier = Modifier.width(8.dp))
+                Spacer(modifier = Modifier.width(38.dp))
                 Dot(isActive = false)
-                Spacer(modifier = Modifier.width(8.dp))
+                Spacer(modifier = Modifier.width(38.dp))
                 Dot(isActive = false)
             }
 
@@ -81,8 +81,8 @@ fun RenewItScreen() {
 
             Text(
                 text = stringResource(id = R.string.description_text),
-                color = Color.White,
-                fontSize = 16.sp,
+                color = Color.Black,
+                fontSize = 19.sp,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -101,8 +101,8 @@ fun RenewItScreen() {
             ) {
                 Text(
                     text = stringResource(id = R.string.sign_up_button_text),
-                    color = Color(0xFF00DB00),
-                    fontSize = 18.sp
+                    color = Color(0xFF1E1E1E),
+                    fontSize = 22.sp
                 )
             }
         }
