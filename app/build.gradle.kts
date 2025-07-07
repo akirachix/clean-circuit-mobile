@@ -4,12 +4,19 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-android {
+android
     namespace = "com.cleancircuit.renewit"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.cleancircuit.renewit"
+        applicationId = "com.cleancircuit.renewit
+    namespace = "com.clean_circuit.renewit"
+    compileSdk = 36
+    
+    
+    defaultConfig {
+        applicationId = "com.clean_circuit.renewit"
+
         minSdk = 24
         targetSdk = 36
         versionCode = 1

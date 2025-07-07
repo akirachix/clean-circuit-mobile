@@ -19,6 +19,8 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Renewit"
+
+rootProject.name = "renewit"
+
 include(":app")
  
