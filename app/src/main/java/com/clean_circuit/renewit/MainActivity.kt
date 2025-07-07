@@ -19,7 +19,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             RenewitTheme {
+
       RenewItScreen()
+
+                LoginScreen()
+
+
             }
         }
     }
