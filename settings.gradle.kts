@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "renewit"
 include(":app")
- 
+include(":app")

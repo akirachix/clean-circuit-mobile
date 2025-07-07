@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">renewit</string>
+    <string name="teaser_one_description">A bedroom with a bed made with patchwork denim quit and pillows</string>
+    <string name="page_text">Welcome</string>
+    <string name="description_text">Welcome to the second life word</string>
+    <string name="continue_button_text">Continue</string>
 </resources>
