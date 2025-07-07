@@ -122,7 +122,7 @@ fun LoginScreen() {
                 email = it
                 emailError = !Patterns.EMAIL_ADDRESS.matcher(email).matches()
             },
-            label = { Text("Email") },
+            label = { Text("Email", fontFamily = InterFontFamily) },
             isError = emailError,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             modifier = Modifier.fillMaxWidth()
@@ -140,7 +140,7 @@ fun LoginScreen() {
                 password = it
                 passwordError = password.length < 6
             },
-            label = { Text("Password") },
+            label = { Text("Password", fontFamily = InterFontFamily) },
             visualTransformation = PasswordVisualTransformation(),
             isError = passwordError,
             modifier = Modifier.fillMaxWidth()
@@ -157,13 +157,13 @@ fun LoginScreen() {
                 checked = checkedState,
                 onCheckedChange = { checkedState = it }
             )
-            Text(text = "Keep me logged in")
+            Text(text = "Keep me logged in", fontFamily = InterFontFamily)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
         TextButton(onClick = { }) {
-            Text(text = "Forgot password?")
+            Text(text = "Forgot password?", fontFamily = InterFontFamily)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -192,7 +192,7 @@ fun LoginScreen() {
             onClick = { },
             colors = ButtonDefaults.textButtonColors(contentColor = GreenPrimary)
         ) {
-            Text(text = "Don't have an account? Sign Up")
+            Text(text = "Don't have an account? Sign Up", fontFamily = InterFontFamily)
         }
     }
 }
