@@ -60,6 +60,9 @@ dependencies {
     implementation(libs.ui)
     implementation(libs.ui.tooling.preview)
     implementation(libs.androidx.activity.compose.vlatestversion)
+    implementation(libs.androidx.ui.v130)
+    implementation(libs.androidx.material3.v100)
+    implementation(libs.androidx.ui.tooling.preview.v130)
 
 
 

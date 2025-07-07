@@ -10,12 +10,18 @@ lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
 composeBom = "2024.09.00"
 material3 = "<latest_version>"
+material3Version = "1.0.0"
 ui = "<latest_version>"
 uiToolingPreview = "<latest_version>"
+uiToolingPreviewVersion = "1.3.0"
+uiVersion = "1.3.0"
 
 [libraries]
 androidx-activity-compose-vlatestversion = { module = "androidx.activity:activity-compose", version.ref = "activityComposeVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-material3-v100 = { module = "androidx.compose.material3:material3", version.ref = "material3Version" }
+androidx-ui-tooling-preview-v130 = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreviewVersion" }
+androidx-ui-v130 = { module = "androidx.compose.ui:ui", version.ref = "uiVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

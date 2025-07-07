@@ -5,29 +5,10 @@ import android.util.Patterns
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Checkbox
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
-import androidx.compose.material3.lightColorScheme
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -36,25 +17,16 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.material3.Typography
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.foundation.shape.RoundedCornerShape
-
-
-
-
-
-
-
-
 
 val GreenPrimary = Color(0xFF00DB00)
 val GreenOnPrimary = Color(0xFFFFFFFF)
 val GreenSecondary = Color(0xFF00DB00)
-
-
 
 val GreenColorScheme = lightColorScheme(
     primary = GreenPrimary,
@@ -62,40 +34,50 @@ val GreenColorScheme = lightColorScheme(
     secondary = GreenSecondary,
 )
 
-
+val InterFontFamily = FontFamily(
+    Font(R.font.inter_regular),
+    Font(R.font.inter_bold, FontWeight.Bold)
+)
 
 val CustomTypography = Typography(
     displayLarge = TextStyle(
+        fontFamily = InterFontFamily,
         fontSize = 30.sp,
         fontWeight = FontWeight.Bold,
         letterSpacing = 0.15.sp
     ),
     displayMedium = TextStyle(
+        fontFamily = InterFontFamily,
         fontSize = 20.sp,
         fontWeight = FontWeight.Bold,
         letterSpacing = 0.15.sp
     ),
     displaySmall = TextStyle(
+        fontFamily = InterFontFamily,
         fontSize = 12.sp,
         fontWeight = FontWeight.Bold,
         letterSpacing = 0.15.sp
     ),
     bodyLarge = TextStyle(
+        fontFamily = InterFontFamily,
         fontSize = 12.sp,
         fontWeight = FontWeight.Normal,
         letterSpacing = 0.5.sp
     ),
     bodyMedium = TextStyle(
+        fontFamily = InterFontFamily,
         fontSize = 24.sp,
         fontWeight = FontWeight.Normal,
         letterSpacing = 0.25.sp
     ),
     bodySmall = TextStyle(
+        fontFamily = InterFontFamily,
         fontSize = 20.sp,
         fontWeight = FontWeight.Normal,
         letterSpacing = 0.4.sp
     )
 )
+
 @Composable
 fun Theme(content: @Composable () -> Unit) {
     MaterialTheme(
@@ -107,7 +89,6 @@ fun Theme(content: @Composable () -> Unit) {
 
 @Composable
 fun LoginScreen() {
-
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var emailError by remember { mutableStateOf(false) }
@@ -128,14 +109,12 @@ fun LoginScreen() {
                 .height(100.dp)
                 .fillMaxWidth()
                 .padding(top = 26.dp)
-
         )
 
         Spacer(modifier = Modifier.height(24.dp))
         Text(text = "Sign In", style = MaterialTheme.typography.displayMedium)
 
         Spacer(modifier = Modifier.height(24.dp))
-
 
         OutlinedTextField(
             value = email,
@@ -149,14 +128,11 @@ fun LoginScreen() {
             modifier = Modifier.fillMaxWidth()
         )
 
-
-
         if (emailError) {
             Text("Invalid email format", color = Color.Red, style = MaterialTheme.typography.bodySmall)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-
 
         OutlinedTextField(
             value = password,
@@ -170,13 +146,11 @@ fun LoginScreen() {
             modifier = Modifier.fillMaxWidth()
         )
 
-
         if (passwordError) {
             Text("Password must be at least 6 characters", color = Color.Red, style = MaterialTheme.typography.displaySmall)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-
 
         Row(verticalAlignment = Alignment.CenterVertically) {
             Checkbox(
@@ -188,17 +162,14 @@ fun LoginScreen() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-
-        TextButton(onClick = {  }) {
+        TextButton(onClick = { }) {
             Text(text = "Forgot password?")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
-
         Button(
             onClick = {
-
                 if (!emailError && !passwordError) {
 
                 } else {
@@ -210,16 +181,12 @@ fun LoginScreen() {
                 .width(135.dp)
                 .height(58.dp)
                 .fillMaxWidth(),
-            shape=RoundedCornerShape(12.dp)
-
-
-
+            shape = RoundedCornerShape(12.dp)
         ) {
-            Text(text = "Sign In", color = GreenOnPrimary,style = MaterialTheme.typography.bodyMedium )
+            Text(text = "Sign In", color = GreenOnPrimary, style = MaterialTheme.typography.bodyMedium)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-
 
         TextButton(
             onClick = { },
@@ -227,7 +194,6 @@ fun LoginScreen() {
         ) {
             Text(text = "Don't have an account? Sign Up")
         }
-
     }
 }
 
@@ -238,8 +204,3 @@ fun PreviewLoginScreen() {
         LoginScreen()
     }
 }
-
-
-
-
-
