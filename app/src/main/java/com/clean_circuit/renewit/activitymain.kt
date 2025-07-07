@@ -56,6 +56,7 @@ fun RenewItScreen() {
 
             elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
         ) {
+
             Image(
                 painter = painterResource(id = R.drawable.teaser_image),
                 contentDescription = stringResource(id = R.string.teaser_one_description),
@@ -117,6 +118,7 @@ fun RenewItScreen() {
                     .wrapContentWidth()
                     .height(56.dp)
             ) {
+
                 Text(
                     text = stringResource(id = R.string.continue_button_text),
                     color = Color(0xFF1E1E1E),
@@ -129,6 +131,7 @@ fun RenewItScreen() {
 @Composable
 fun Dot(isActive: Boolean) {
     Box(
+
         modifier = Modifier
             .size(8.dp)
             .clip(CircleShape)
@@ -138,6 +141,7 @@ fun Dot(isActive: Boolean) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewRenewItScreen() {
+
     RenewitTheme{
         RenewItScreen()
     }
