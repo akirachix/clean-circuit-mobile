@@ -1,9 +1,6 @@
 package com.clean_circuit.renewit
 
-import android.os.Bundle
 import android.util.Patterns
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -23,6 +20,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.foundation.shape.RoundedCornerShape
+
+
 
 val GreenPrimary = Color(0xFF00DB00)
 val GreenOnPrimary = Color(0xFFFFFFFF)

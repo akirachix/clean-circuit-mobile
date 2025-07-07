@@ -63,6 +63,9 @@ dependencies {
     implementation(libs.androidx.ui.v130)
     implementation(libs.androidx.material3.v100)
     implementation(libs.androidx.ui.tooling.preview.v130)
+    implementation(libs.androidx.ui.v105)
+    implementation(libs.androidx.material3.v132)
+
 
 
 
