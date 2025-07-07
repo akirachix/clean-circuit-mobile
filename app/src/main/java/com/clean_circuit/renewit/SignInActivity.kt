@@ -112,7 +112,7 @@ fun LoginScreen() {
         )
 
         Spacer(modifier = Modifier.height(24.dp))
-        Text(text = "Sign In", style = MaterialTheme.typography.displayMedium)
+        Text(text = "Sign In", style = MaterialTheme.typography.displayMedium, fontFamily = InterFontFamily)
 
         Spacer(modifier = Modifier.height(24.dp))
 
@@ -129,7 +129,7 @@ fun LoginScreen() {
         )
 
         if (emailError) {
-            Text("Invalid email format", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+            Text("Invalid email format", color = Color.Red, style = MaterialTheme.typography.bodySmall, fontFamily = InterFontFamily)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -147,7 +147,7 @@ fun LoginScreen() {
         )
 
         if (passwordError) {
-            Text("Password must be at least 6 characters", color = Color.Red, style = MaterialTheme.typography.displaySmall)
+            Text("Password must be at least 6 characters", color = Color.Red, style = MaterialTheme.typography.displaySmall, fontFamily = InterFontFamily)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
