@@ -183,7 +183,7 @@ fun LoginScreen() {
                 .fillMaxWidth(),
             shape = RoundedCornerShape(12.dp)
         ) {
-            Text(text = "Sign In", color = GreenOnPrimary, style = MaterialTheme.typography.bodyMedium)
+            Text(text = "Sign In", color = GreenOnPrimary, style = MaterialTheme.typography.bodyMedium, fontFamily = InterFontFamily)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
