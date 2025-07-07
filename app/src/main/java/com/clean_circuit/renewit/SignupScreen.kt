@@ -60,14 +60,18 @@ fun SignUpScreen() {
 
 
         Image(
-            painter = painterResource(id = R.drawable.logo), // Replace with your logo resource
+            painter = painterResource(id = R.drawable.logo),
             contentDescription = "Logo",
-            modifier = Modifier.size(100.dp)
+            modifier = Modifier.size(150.dp)
         )
 
 
         Spacer(modifier = Modifier.height(32.dp))
-        Text(text = "Sign Up", style = MaterialTheme.typography.displayMedium)
+        Text(
+            text = "Sign Up",
+            style = MaterialTheme.typography.displayMedium.copy(fontSize = 40.sp)
+        )
+
         Spacer(modifier = Modifier.height(1.dp))
         Box(
             modifier = Modifier.fillMaxWidth()
@@ -77,7 +81,7 @@ fun SignUpScreen() {
                 fontWeight = FontWeight.Medium,
                 fontSize = 15.sp,
                 modifier = Modifier
-                    .padding(bottom = 8.dp)
+                    .padding(bottom = 18.dp)
                     .align(Alignment.TopStart),
                 textAlign = TextAlign.Start
             )
@@ -109,7 +113,7 @@ fun SignUpScreen() {
                 fontWeight = FontWeight.Medium,
                 fontSize = 15.sp,
                 modifier = Modifier
-                    .padding(bottom = 8.dp)
+                    .padding(bottom = 15.dp)
                     .align(Alignment.TopStart),
                 textAlign = TextAlign.Start
             )
@@ -139,7 +143,7 @@ fun SignUpScreen() {
                 fontWeight = FontWeight.Medium,
                 fontSize = 15.sp,
                 modifier = Modifier
-                    .padding(bottom = 8.dp)
+                    .padding(bottom = 15.dp)
                     .align(Alignment.TopStart),
                 textAlign = TextAlign.Start
             )
@@ -169,7 +173,7 @@ fun SignUpScreen() {
                 fontWeight = FontWeight.Medium,
                 fontSize = 15.sp,
                 modifier = Modifier
-                    .padding(bottom = 8.dp)
+                    .padding(bottom = 15.dp)
                     .align(Alignment.TopStart),
                 textAlign = TextAlign.Start
             )
@@ -211,16 +215,24 @@ fun SignUpScreen() {
 
         Column(
             modifier = Modifier.fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally  // Center children horizontally
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Button(
                 onClick = {},
                 colors = ButtonDefaults.buttonColors(buttonColor),
-                shape = RoundedCornerShape(10.dp)  // Smaller corner radius for less curvature
+                shape = RoundedCornerShape(10.dp),
+                modifier = Modifier
+                    .height(60.dp)
+                    .width(150.dp)
             ) {
-                Text("Sign Up", color = Color.White)
+                Text(
+                    "Sign Up",
+                    color = Color.White,
+                    fontSize = 25.sp
+                )
             }
         }
+
 
 
 
