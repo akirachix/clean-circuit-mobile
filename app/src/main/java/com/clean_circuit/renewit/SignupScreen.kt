@@ -1,8 +1,5 @@
 package com.clean_circuit.renewit
 
-//package com.clean_circuit.renewit
-
-
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -24,6 +21,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
@@ -34,14 +34,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.clean_circuit.renewit.R
 
 
+val InterFontFamily = FontFamily(
+    Font(R.font.inter_regular)
+)
+
 @Composable
 fun SignUpScreen() {
     val primaryColor = Color(0xFF00DB00)
     val borderColor = Color(0xFF00DB00)
     val buttonColor = Color(0xFF00DB00)
-
-
-
 
     val name = remember { mutableStateOf("") }
     val email = remember { mutableStateOf("") }
@@ -49,27 +50,27 @@ fun SignUpScreen() {
     val confirmPassword = remember { mutableStateOf("") }
     val isAgreedToTerms = remember { mutableStateOf(false) }
 
-
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(15.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-
+        Spacer(modifier = Modifier.height(25.dp))
 
         Image(
-            painter = painterResource(id = R.drawable.logo),
+            painter = painterResource(id = R.drawable.logo_app),
             contentDescription = "Logo",
-            modifier = Modifier.size(150.dp)
+            modifier = Modifier.size(70.dp)
         )
 
-
-        Spacer(modifier = Modifier.height(32.dp))
         Text(
             text = "Sign Up",
-            style = MaterialTheme.typography.displayMedium.copy(fontSize = 40.sp)
+            style = MaterialTheme.typography.displayMedium.copy(fontSize = 24.sp),
+            fontWeight = FontWeight.Bold,fontFamily = InterFontFamily,
+
+
         )
 
         Spacer(modifier = Modifier.height(1.dp))
@@ -79,30 +80,21 @@ fun SignUpScreen() {
             Text(
                 text = "Name",
                 fontWeight = FontWeight.Medium,
-                fontSize = 15.sp,
+                fontSize = 20.sp,
+                fontFamily = InterFontFamily,
                 modifier = Modifier
-                    .padding(bottom = 18.dp)
+                    .padding(bottom = 10.dp)
                     .align(Alignment.TopStart),
                 textAlign = TextAlign.Start
             )
         }
 
-
-
-
-
-
-
-
         OutlinedTextField(
             value = name.value,
             onValueChange = { name.value = it },
-            label = { Text("Name") },
-            modifier = Modifier
-                .fillMaxWidth()
-//                .border(BorderStroke(2.dp, borderColor), RoundedCornerShape(5.dp))
+            placeholder = { Text("name", fontFamily = InterFontFamily, fontSize = 12.sp, fontStyle = FontStyle.Italic) },
+            modifier = Modifier.fillMaxWidth()
         )
-
 
         Spacer(modifier = Modifier.height(16.dp))
         Box(
@@ -111,58 +103,45 @@ fun SignUpScreen() {
             Text(
                 text = "Email",
                 fontWeight = FontWeight.Medium,
-                fontSize = 15.sp,
+                fontSize = 20.sp,
+                fontFamily = InterFontFamily,
                 modifier = Modifier
-                    .padding(bottom = 15.dp)
+                    .padding(bottom = 10.dp)
                     .align(Alignment.TopStart),
                 textAlign = TextAlign.Start
             )
         }
 
-
-
-
-
         OutlinedTextField(
             value = email.value,
             onValueChange = { email.value = it },
-            label = { Text("email@example.com") },
-            modifier = Modifier
-                .fillMaxWidth()
-//                .border(BorderStroke(2.dp, borderColor), RoundedCornerShape(5.dp))
+            placeholder = { Text("email@example.com", fontFamily = InterFontFamily,fontSize = 12.sp, fontStyle = FontStyle.Italic) },
+            modifier = Modifier.fillMaxWidth()
         )
 
-
         Spacer(modifier = Modifier.height(16.dp))
-
         Box(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
                 text = "Password",
                 fontWeight = FontWeight.Medium,
-                fontSize = 15.sp,
+                fontSize = 20.sp,
+                fontFamily = InterFontFamily,
                 modifier = Modifier
-                    .padding(bottom = 15.dp)
+                    .padding(bottom = 10.dp)
                     .align(Alignment.TopStart),
                 textAlign = TextAlign.Start
             )
         }
 
-
-
-
-
         OutlinedTextField(
             value = password.value,
             onValueChange = { password.value = it },
-            label = { Text("enter password") },
+            placeholder = { Text("enter password", fontFamily = InterFontFamily,fontSize = 12.sp, fontStyle = FontStyle.Italic) },
             visualTransformation = PasswordVisualTransformation(),
-            modifier = Modifier
-                .fillMaxWidth()
-//                .border(BorderStroke(2.dp, borderColor), RoundedCornerShape(5.dp))
+            modifier = Modifier.fillMaxWidth()
         )
-
 
         Spacer(modifier = Modifier.height(16.dp))
         Box(
@@ -171,47 +150,38 @@ fun SignUpScreen() {
             Text(
                 text = "Confirm Password",
                 fontWeight = FontWeight.Medium,
-                fontSize = 15.sp,
+                fontSize = 20.sp,
+                fontFamily = InterFontFamily,
                 modifier = Modifier
-                    .padding(bottom = 15.dp)
+                    .padding(bottom = 10.dp)
                     .align(Alignment.TopStart),
                 textAlign = TextAlign.Start
             )
         }
 
-
-
-
-
         OutlinedTextField(
             value = confirmPassword.value,
             onValueChange = { confirmPassword.value = it },
-            label = { Text("re-enter password") },
+            placeholder = { Text("re-enter password", fontFamily = InterFontFamily,fontSize = 12.sp, fontStyle = FontStyle.Italic) },
             visualTransformation = PasswordVisualTransformation(),
-            modifier = Modifier
-                .fillMaxWidth()
-//                .border(BorderStroke(2.dp, borderColor), RoundedCornerShape(5.dp))
+            modifier = Modifier.fillMaxWidth()
         )
 
-
         Spacer(modifier = Modifier.height(16.dp))
-
-
-
 
         Row(verticalAlignment = Alignment.CenterVertically) {
             Checkbox(
                 checked = isAgreedToTerms.value,
                 onCheckedChange = { isAgreedToTerms.value = it }
             )
-            Text("I agree to the terms and conditions and privacy policy", fontSize = 14.sp)
+            Text(
+                "I agree to the terms and conditions and privacy policy",
+                fontSize = 12.sp,
+                fontFamily = InterFontFamily
+            )
         }
 
-
         Spacer(modifier = Modifier.height(16.dp))
-
-
-
 
         Column(
             modifier = Modifier.fillMaxWidth(),
@@ -228,18 +198,13 @@ fun SignUpScreen() {
                 Text(
                     "Sign Up",
                     color = Color.White,
-                    fontSize = 25.sp
+                    fontSize = 24.sp,
+                    fontFamily = InterFontFamily
                 )
             }
         }
 
-
-
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-
-
+        Spacer(modifier = Modifier.height(16.dp))
 
         Text(
             buildAnnotatedString {
@@ -250,11 +215,12 @@ fun SignUpScreen() {
                     append("Sign In")
                 }
             },
-            modifier = Modifier.clickable {  }
+            modifier = Modifier.clickable { },
+            fontFamily = InterFontFamily,fontSize = 20.sp
+
         )
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
