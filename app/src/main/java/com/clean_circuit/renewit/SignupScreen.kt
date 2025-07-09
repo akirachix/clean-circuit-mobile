@@ -34,7 +34,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.clean_circuit.renewit.R
 
 
-val InterFontFamily = FontFamily(
+public val InterFontFamily = FontFamily(
     Font(R.font.inter_regular)
 )
 

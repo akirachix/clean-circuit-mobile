@@ -23,10 +23,6 @@ class MainActivity : ComponentActivity() {
 
             SignUpScreen()
 
-            RenewitTheme {
-                LoginScreen()
-
-            }
 
         }
     }
