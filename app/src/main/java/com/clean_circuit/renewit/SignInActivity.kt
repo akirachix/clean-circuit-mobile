@@ -53,7 +53,7 @@ val CustomTypography = Typography(
     ),
     displaySmall = TextStyle(
         fontFamily = InterFontFamily,
-        fontSize = 12.sp,
+        fontSize = 1.sp,
         fontWeight = FontWeight.Bold,
         letterSpacing = 0.15.sp
     ),
@@ -146,7 +146,7 @@ fun LoginScreen() {
         )
 
         if (passwordError) {
-            Text("Password must be at least 6 characters", color = Color.Red, style = MaterialTheme.typography.displaySmall, fontFamily = InterFontFamily)
+            Text("Password must be at least 6 characters", color = Color.Red, style = MaterialTheme.typography.bodySmall, fontFamily = InterFontFamily)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
