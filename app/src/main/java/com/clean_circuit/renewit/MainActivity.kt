@@ -1,5 +1,6 @@
 package com.clean_circuit.renewit
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,19 +14,38 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.clean_circuit.renewit.ui.theme.RenewitTheme
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
 
+
                 RenewItScreen()
+
+            RenewitTheme {
+
+      RenewItScreen()
+
 
                 LoginScreen()
 
 
             }
+
+
+            SignUpScreen()
+
+
+
         }
     }
 }
 
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun SignUpScreenPreview(){
+    SignUpScreen()
+}
