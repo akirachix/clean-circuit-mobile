@@ -23,6 +23,9 @@ class MainActivity : ComponentActivity() {
 
             RenewitTheme {
 
+                ForgotPasswordScreen()
+
+
       RenewItScreen()
 
                 LoginScreen()
