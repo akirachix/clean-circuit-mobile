@@ -1,8 +1,11 @@
-package com.clean_circuit.renewit
+package com.clean_circuit.renewit.Screens
+
+
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -13,8 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
@@ -22,14 +23,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
+import com.clean_circuit.renewit.R
+import com.clean_circuit.renewit.Screen
 
-val InterFontFamily = FontFamily(
-    Font(R.font.inter_regular),
-    Font(R.font.inter_bold, FontWeight.Bold)
-)
 
 @Composable
-fun ForgotPasswordScreen() {
+fun ForgotPasswordScreen(
+    onClickLogin: () -> Unit
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -41,7 +42,7 @@ fun ForgotPasswordScreen() {
         ) {
             Spacer(modifier = Modifier.height(48.dp))
             Image(
-                painter = painterResource(id = R.drawable.ic_recycle_logo), // Your logo resource
+                painter = painterResource(id = R.drawable.ic_recycle_logo),
                 contentDescription = "Logo",
                 modifier = Modifier
                     .height(100.dp)
@@ -115,7 +116,7 @@ fun ForgotPasswordScreen() {
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
                     )
                     Button(
-                        onClick = { /* Reset logic */ },
+                        onClick = {},
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp)
@@ -134,14 +135,15 @@ fun ForgotPasswordScreen() {
                         )
                     }
                     TextButton(
-                        onClick = { /* Navigate back to login */ }
+                        onClick = { }
                     ) {
                         Text(
                             text = "Back to Login",
                             fontFamily = InterFontFamily,
                             color = Color(0xFF00B300),
                             fontWeight = FontWeight.Bold,
-                            fontSize = 18.sp
+                            fontSize = 18.sp,
+                            modifier = Modifier.clickable { onClickLogin() }
                         )
                     }
                 }
@@ -153,5 +155,5 @@ fun ForgotPasswordScreen() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun ForgotPasswordScreenPreview() {
-    ForgotPasswordScreen()
+    ForgotPasswordScreen {}
 }
