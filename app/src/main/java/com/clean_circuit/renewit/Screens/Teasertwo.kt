@@ -1,34 +1,16 @@
 package com.clean_circuit.renewit
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -37,10 +19,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.clean_circuit.renewit.ui.theme.RenewitTheme
+import com.clean_circuit.renewit.ui.theme.InterFontFamily
+
 
 @Composable
-fun RenewItScreen() {
+fun RenewItScreenTwo(
+    onClickTeaserTwo:()->Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -56,10 +41,9 @@ fun RenewItScreen() {
 
             elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
         ) {
-
             Image(
-                painter = painterResource(id = R.drawable.teaser_image),
-                contentDescription = stringResource(id = R.string.teaser_one_description),
+                painter = painterResource(id = R.drawable.teasertwo),
+                contentDescription = stringResource(id = R.string.teaser_two_description),
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -85,24 +69,27 @@ fun RenewItScreen() {
             ) {
                 Dot(isActive = true)
                 Spacer(modifier = Modifier.width(38.dp))
-                Dot(isActive = true)
+                Dot(isActive = false)
                 Spacer(modifier = Modifier.width(38.dp))
-                Dot(isActive = true)
+                Dot(isActive = false)
             }
 
             Text(
-                text = stringResource(id = R.string.page_text),
+                text = stringResource(id = R.string.renewit_text),
                 color = Color.White,
-                fontSize = 40.sp,
+                fontSize = 45.sp,
                 fontWeight = FontWeight.Bold,
+                fontFamily = InterFontFamily ,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
             Text(
-                text = stringResource(id = R.string.description_text),
+                text = stringResource(id = R.string.description_text_2),
                 color = Color.Black,
-                fontSize = 20.sp,
+                fontSize = 21.sp,
                 textAlign = TextAlign.Center,
+                fontWeight = FontWeight.SemiBold,
+                fontFamily = InterFontFamily,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 32.dp)
@@ -110,7 +97,7 @@ fun RenewItScreen() {
             )
 
             Button(
-                onClick = { },
+                onClick = { onClickTeaserTwo()},
                 colors = ButtonDefaults.buttonColors(containerColor = Color.White),
                 shape = RoundedCornerShape(10.dp),
                 modifier = Modifier
@@ -118,11 +105,13 @@ fun RenewItScreen() {
                     .wrapContentWidth()
                     .height(56.dp)
             ) {
-
                 Text(
-                    text = stringResource(id = R.string.continue_button_text),
+                    text = stringResource(id = R.string.sign_up_button_text),
                     color = Color(0xFF1E1E1E),
-                    fontSize = 24.sp
+                    fontSize = 25.sp,
+                    fontWeight = FontWeight.Normal,
+                    fontFamily = InterFontFamily
+
                 )
             }
         }
@@ -131,7 +120,6 @@ fun RenewItScreen() {
 @Composable
 fun Dot(isActive: Boolean) {
     Box(
-
         modifier = Modifier
             .size(8.dp)
             .clip(CircleShape)
@@ -140,9 +128,9 @@ fun Dot(isActive: Boolean) {
 }
 @Preview(showBackground = true)
 @Composable
-fun PreviewRenewItScreen() {
+fun PreviewRenewItScreenTwo() {
 
-    RenewitTheme{
-        RenewItScreen()
-    }
+        RenewItScreenTwo({})
+
+
 }

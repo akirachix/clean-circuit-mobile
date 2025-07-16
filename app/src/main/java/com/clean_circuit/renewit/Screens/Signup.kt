@@ -1,8 +1,8 @@
-package com.clean_circuit.renewit
+package com.clean_circuit.renewit.Screens
 
-import androidx.compose.foundation.BorderStroke
+
+
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -34,12 +34,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.clean_circuit.renewit.R
 
 
-public val InterFontFamily = FontFamily(
+
+val InterFontFamily = FontFamily(
     Font(R.font.inter_regular)
 )
 
 @Composable
-fun SignUpScreen() {
+fun SignUpScreen(onClickSignup: () -> Unit,onClickSignIn:()->Unit) {
     val primaryColor = Color(0xFF00DB00)
     val borderColor = Color(0xFF00DB00)
     val buttonColor = Color(0xFF00DB00)
@@ -71,7 +72,7 @@ fun SignUpScreen() {
             fontWeight = FontWeight.Bold,fontFamily = InterFontFamily,
 
 
-        )
+            )
 
         Spacer(modifier = Modifier.height(1.dp))
         Box(
@@ -188,7 +189,7 @@ fun SignUpScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Button(
-                onClick = {},
+                onClick = {onClickSignup()},
                 colors = ButtonDefaults.buttonColors(buttonColor),
                 shape = RoundedCornerShape(10.dp),
                 modifier = Modifier
@@ -199,7 +200,8 @@ fun SignUpScreen() {
                     "Sign Up",
                     color = Color.White,
                     fontSize = 24.sp,
-                    fontFamily = InterFontFamily
+                    fontFamily = InterFontFamily,
+
                 )
             }
         }
@@ -212,10 +214,10 @@ fun SignUpScreen() {
                     append("Already have an account? ")
                 }
                 withStyle(style = SpanStyle(color = primaryColor)) {
-                    append("Sign In")
+                    append("Sign In",)
                 }
             },
-            modifier = Modifier.clickable { },
+            modifier = Modifier.clickable {onClickSignIn ()},
             fontFamily = InterFontFamily,fontSize = 20.sp
 
         )
@@ -225,5 +227,5 @@ fun SignUpScreen() {
 @Preview(showBackground = true)
 @Composable
 fun PreviewSignUpScreen() {
-    SignUpScreen()
+    SignUpScreen({},{})
 }
